@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+*.Rproj
+inst/doc
+*.vs/
+.V8history
+*.rds
+test.R
+.vscode
+.DS_Store
+.vscode
+manim-py/*
