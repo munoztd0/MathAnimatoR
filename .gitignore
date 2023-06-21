@@ -7,9 +7,9 @@ inst/doc
 .V8history
 *.rds
 media
-#test.R
+test.R
 .vscode
 .DS_Store
 .vscode
-#manim-py/*
 #DEBUG
+.env

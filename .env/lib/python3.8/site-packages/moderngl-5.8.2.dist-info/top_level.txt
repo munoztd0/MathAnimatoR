@@ -1,3 +1,0 @@
-_moderngl
-moderngl
-moderngl-stubs
