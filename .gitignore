@@ -6,9 +6,9 @@ inst/doc
 *.vs/
 .V8history
 *.rds
-test.R
+#test.R
 .vscode
 .DS_Store
 .vscode
-manim-py/*
-DEBUG
+#manim-py/*
+#DEBUG
