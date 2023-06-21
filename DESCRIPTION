@@ -3,7 +3,8 @@ Title: Mathematical Animations with R
 Version: 0.0.1
 Authors@R:
   person("David", "Munoz Tord", email = "david.munoztord@mailbox.org", role = c("cre", "auth"), comment = c(ORCID = "0000-0001-7954-8295")),
- person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "ctb"))
+  person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "ctb")),
+  person("Vestin", "hategekimana", email = "vestin.hategekimana@unige.ch", role = c("ctb", "auth"), comment = c(ORCID = "0009-0004-5986-8901")),
 Description: Manim is an engine for precise programmatic animations, designed for creating explanatory math videos with R.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
