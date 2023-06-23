@@ -19,3 +19,6 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.0.0)
 RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    reticulate
