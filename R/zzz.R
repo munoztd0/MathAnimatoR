@@ -40,7 +40,7 @@
   } else {
     forced <- reticulate::py_config()
     if (is.null(forced$forced)) {
-       reticulate::py_install("manim", pip=TRUE)
+       reticulate::py_install("manim", pip=F)
         manim <- reticulate::import("manim",
                                     delay_load = TRUE)
       assign("manim", manim, envir = .GlobalEnv)
@@ -54,13 +54,31 @@
     } else {
         message("Python environment is blocked by radian, 
                 please use raw R or restart a new session")
+      
+        envs <- reticulate::conda_list()
+      if("MathAnimatoR" %in% envs$name){
+        reticulate::use_condaenv("MathAnimatoR")
+        
+      } else {
+        
+         reticulate::conda_create("MathAnimatoR")
+         reticulate::conda_install("MathAnimatoR", "manim")
+         reticulate::use_condaenv("MathAnimatoR")
+          
+      }
+      
+      
+      manim <- reticulate::import("manim", delay_load = TRUE)
+      
+      assign("manim", manim, envir = .GlobalEnv)
+      if (reticulate::py_module_available("manim")) { 
+        #message("Python environment configured.")
+      } else {
+        packageStartupMessage("Python package manim not found.")
 
-      # if (reticulate::py_module_available("manim")) { 
-      #   #message("Python environment configured.")
-      # } else {
-      #   packageStartupMessage("Python package manim not found.")
-      # 
-      # }
+      }
+
+=
     }
   }
 }
