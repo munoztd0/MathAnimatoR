@@ -27,3 +27,4 @@ media/*
 .env
 __pycache__
 manim.cfg
+assets

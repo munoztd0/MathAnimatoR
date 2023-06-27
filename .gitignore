@@ -12,6 +12,6 @@ test.R
 .DS_Store
 .vscode
 #DEBUG
-.env
+.env/*
 __pycache__
 *.cfg
