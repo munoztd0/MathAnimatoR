@@ -1,22 +1,12 @@
 # Internal package environment to facilitate Python module access
 #.sbenv <- new.env(parent = emptyenv())
- .onLoad <- function(libname, pkgname) {
-    gameFile <- "./gameFile.Rdata"
 
-    if (file.exists(gameFile)) {
-      game <- load(gameFile)
-    } else {
-      game <- GameClass$new("Eric", "Cassie")
-      save(game, file = gameFile)
-    }
-    assign("game", game, envir = .GlobalEnv)
-  }
 
 .onLoad <- function(libname, pkgname) {
   # Manage Python dependencies automatically
   # https://rstudio.github.io/reticulate/articles/python_dependencies.html#-onload-configuration
   # Retrieved 2021-10-05
-  reticulate::configure_environment(pkgname)
+  #reticulate::configure_environment(pkgname)
 
   # Check stickleback availability (Config/reticulate doesn't always work)
   if (reticulate::py_module_available("manim")) {
@@ -24,13 +14,9 @@
     manim <- reticulate::import("manim",
                                     delay_load = TRUE)
      assign("manim", manim, envir = .GlobalEnv)
+
     # .sbenv$sb_data <- reticulate::import("stickleback.data",
     #                                      delay_load = TRUE)
-    # .sbenv$sb_util <- reticulate::import("stickleback.util",
-    #                                      delay_load = TRUE)
-    # .sbenv$sb_viz <- reticulate::import("stickleback.visualize",
-    #                                     delay_load = TRUE,
-    #                                     convert = FALSE)
 
     # Import utility functions
     # util_path <- system.file("python", package = "rstickleback")
@@ -52,25 +38,14 @@
       }
 
     } else {
-        message("Python environment is blocked by radian, 
-                please use raw R or restart a new session")
-      
-        envs <- reticulate::conda_list()
-      if("MathAnimatoR" %in% envs$name){
-        reticulate::use_condaenv("MathAnimatoR")
-        
-      } else {
-        
-         reticulate::conda_create("MathAnimatoR")
-         reticulate::conda_install("MathAnimatoR", "manim")
-         reticulate::use_condaenv("MathAnimatoR")
-          
-      }
-      
+        message("Python environment is blocked (usually by radian),
+                please use raw R or install radian through:
+                'conda install -c conda-forge radian'")
       
       manim <- reticulate::import("manim", delay_load = TRUE)
       
       assign("manim", manim, envir = .GlobalEnv)
+      
       if (reticulate::py_module_available("manim")) { 
         #message("Python environment configured.")
       } else {
@@ -78,34 +53,28 @@
 
       }
 
-=
+
     }
   }
 }
 
 
 
-#local <- new.env()
+local <- new.env()
 
-# .onAttach <- function(libname, pkgname){
-#   if(!grepl(x = R.Version()$arch, pattern = "64")){
-#     warning("This package only works on 64bit architectures due to a dependency on torch. You are not running a 64bit version of R.")
-#   }
-#   reticulate::py_install("manim", pip=TRUE)
-# }
+.onAttach <- function(libname, pkgname){
+  if(!grepl(x = R.Version()$arch, pattern = "64")){
+    warning("This package only works on 64bit architectures due to a dependency on openGL. You are not running a 64bit version of R.")
+  }
+}
 
 
-# .onLoad <- function(libname, pkgname) {
-#    reticulate::configure_environment(pkgname, force = TRUE)
-#    reticulate::py_config()
-# }
-
+#for later
 
 # .onLoad <- function(libname, pkgname) {
 #   reticulate::configure_environment(pkgname)
 
   #packageStartupMessage("- Loading golgotha BERT code")
-
   #oldwd <- getwd()
   #on.exit(setwd(oldwd))
   #setwd(system.file(package = "golgotha", "python"))
