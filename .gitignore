@@ -13,3 +13,5 @@ test.R
 .vscode
 #DEBUG
 .env
+__pycache__
+manig.cfg

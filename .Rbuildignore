@@ -25,3 +25,5 @@ index.md
 ^CRAN-SUBMISSION$
 media/* 
 .env
+__pycache__
+manig.cfg
