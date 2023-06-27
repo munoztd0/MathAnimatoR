@@ -14,4 +14,4 @@ test.R
 #DEBUG
 .env
 __pycache__
-manig.cfg
+*.cfg

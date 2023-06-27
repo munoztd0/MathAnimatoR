@@ -26,4 +26,4 @@ index.md
 media/* 
 .env
 __pycache__
-manig.cfg
+*.cfg
