@@ -1,6 +1,7 @@
 DEBUG 
 manim
 
+conda install -c conda-forge radian
 
 sudo apt-get install texlive-latex-extra # texlive-full
 

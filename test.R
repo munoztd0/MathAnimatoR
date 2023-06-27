@@ -1,12 +1,4 @@
-
-# python -m venv /home/user/.virtualenvs/xxx/
-# source /home/user/.virtualenvs/xxx/bin/activate
-# /home/user/.virtualenvs/x/bin/python -m pip install --upgrade pip
-# sudo apt install libpango1.0-dev
-# python -m pip install -U git+https://github.com/randy3k/radian
-
-lib(reticulate)
-manim <- import('manim')
+lib(MathAnimatoR)
 lib(dplyr)
 
 pink <- "#D147BD"
@@ -22,7 +14,7 @@ mObjects <- list(
 # 2. place  Mobjects
 placing  <- function(){
     square$flip(manim$RIGHT)
-    square$rotate(-3 * manim$TAU / 8)
+    square$rotate(-3 * manim$pi / 8)
     circle$set_fill(pink, opacity=0.5)
 }
 
@@ -30,7 +22,7 @@ placing  <- function(){
 animate  <- list(
     one = manim$Create(square),
     two = manim$Transform(square, circle),
-    three =manim$FadeOut(circle)
+    three = manim$FadeOut(circle)
 )
 
 render <- function(mobjects, placement, animations){
@@ -67,7 +59,7 @@ SquareToCircle <- function() {
   circle <- manim$Circle()
   square <- manim$Square()
   square$flip(manim$RIGHT)
-  square$rotate(-3 * manim$TAU / 8)
+  square$rotate(-3 * manim$pi / 8)
   circle$set_fill(manim$PINK, opacity=0.5)
 #   scene$add(square)
   scene$play(manim$Create(square))
