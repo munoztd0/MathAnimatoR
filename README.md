@@ -38,8 +38,6 @@ scene |> render()
 
 ```
 
-
-
-https://github.com/munoztd0/MathAnimatoR/assets/43644805/3a37c3b2-de49-4bf2-aaa9-f0027e5060ab
+https://github.com/munoztd0/MathAnimatoR/assets/43644805/9a0abafe-2f7a-4a7b-960c-0f54079283b2
 
 
