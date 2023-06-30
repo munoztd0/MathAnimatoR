@@ -10,20 +10,21 @@ library(MathAnimatoR)
 scene <- init_scene()
 
 mCircle <- circle()
-mSquare <- square()
+mSquare <- square() # create a square
 
 pink <- "#D147BD"
 
-anim1 <- mCircle |>
-            flip(LEFT()) |>
-            rotate(-3 * pi / 8) |>
-            create()
+anim1 <- mSquare |>
+            flip(direction=LEFT) |>
+            rotate(pi / 4) |> # rotate a certain amount
+            display()
 
 anim2 <- mSquare|>
-            transmute( mCircle |> set_fill(pink, opacity=0.5) )
+            transmute( mCircle |> set_fill(pink, opacity=0.5) ) # interpolate the square into the circle
 
 anim3 <- mSquare |>
-            fadeout()
+            fadeout() #fade out animation
+
 
 play(scene, anim1)
 
@@ -33,10 +34,6 @@ play(scene, anim3)
 
 
 scene |> render()
-
-
-
-
 
 
 ```

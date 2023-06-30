@@ -23,7 +23,7 @@ index.md
 ^FUNDING\.yml$
 ^CODE_OF_CONDUCT\.md$
 ^CRAN-SUBMISSION$
-media/* 
+media
 .env
 __pycache__
 manim.cfg

@@ -20,6 +20,9 @@
 #' @name translate a mObject
 #' @export
 flip <- function(mobject, direction=UP) {
+  if (is.function(direction)) {
+    direction <- direction()
+  }
   mobject$flip(direction)
 }
 

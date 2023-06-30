@@ -1,4 +1,4 @@
-#' Incrementally show a mObject
+#' Incrementally display a mObject
 #'
 #' @param mobject The \code{\link{mObject}} to animate.
 #'
@@ -8,15 +8,15 @@
 #' anim <- circle() |>
 #'              flip(LEFT()) |>
 #'              rotate(-3 * pi / 8) |>
-#'              create()
+#'              display()
 #'
 #' play(scene, anim)
 #'
 #' scene |> render()
 #'
-#' @name create mObject
+#' @name display mObject
 #' @export
-create <- function(mobject){
+display <- function(mobject){
   manim$Create(mobject)
 }
 
