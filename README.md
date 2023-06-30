@@ -37,3 +37,9 @@ scene |> render()
 
 
 ```
+
+
+
+https://github.com/munoztd0/MathAnimatoR/assets/43644805/3a37c3b2-de49-4bf2-aaa9-f0027e5060ab
+
+
