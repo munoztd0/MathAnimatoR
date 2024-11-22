@@ -6,19 +6,14 @@ Authors@R: c(
   person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "ctb")),
   person("Vestin", "Hategekimana", email = "vestin.hategekimana@unige.ch", role = c("ctb", "aut"), comment = c(ORCID = "0009-0004-5986-8901"))
   )
-Description: Provides an R interface to the Python package manim. Manim is an engine for precise programmatic animations, designed for creating explanatory math videos with R.
-Config/reticulate:
-  list(
-    packages = list(
-      list(package = "manim", pip = TRUE)
-    )
-  )
+Description: Provides an R interface to manim. Manim is an engine for precise programmatic animations, designed for creating explanatory math videos with R.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.0.0)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Imports: 
     dplyr,
-    reticulate
+    htmlwidgets,
+    shiny

@@ -1,0 +1,4 @@
+dependencies:
+  - name: p5
+    version: 1.4.0
+    src: "https://cdnjs.cloudflare.com/ajax/libs/p8.js/1.4.0/p5.js"
